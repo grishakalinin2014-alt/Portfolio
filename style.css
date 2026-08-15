@@ -1,0 +1,226 @@
+:root {
+  --bg-color: #141714;         
+  --card-bg: #1f241f;          
+  --text-main: #f0f2ee;    
+  --text-muted: #9ba398;   
+  --accent-color: #ccb854;     
+  --accent-hover: #e5b66d;  
+  --border-color: #2e362e;      
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Стартовый экран */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.scroll-down-hint {
+  margin-top: 15px;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.9rem;
+  animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50%, 60% { transform: translateY(8px); }
+}
+
+/* Карточки с информацией */
+.content-stream {
+  padding-bottom: 50px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 70px;
+  overflow: visible; /* Важно: разрешает дочерним элементам выступать за границы */
+  position: relative;
+}
+
+.card h2 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.card a {
+  color: var(--accent-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ ПРОКРУТКЕ                                          */
+/* -------------------------------------------------------------------------- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(35px);
+  /* Считываем кастомную задержку из атрибута style="--delay: ...s" */
+  transition: opacity 0.7s ease-out var(--delay, 0s), 
+              transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   СТИЛИ ДЛЯ БЛОКА ОПЫТА И МЕДИА
+   ========================================================================== */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.timeline-item {
+  border-left: 3px solid var(--border-color);
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+  position: relative;
+  /* Плавный визуальный отклик */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease,
+              background-color 0.3s ease,
+              opacity 0.4s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Состояние активной карточки в центре экрана */
+.timeline-item.active-card {
+  transform: scale(1.06); /* Заметный масштаб */
+  border-left-color: var(--accent-color);
+  background-color: #171c17; /* Легкая подложка при фокусе */
+  z-index: 10; /* Поднимает карточку над остальными */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-item:not(.active-card) {
+  opacity: 0.75; /* Размываем неактивные элементы для эффекта глубины */
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.timeline-header h3 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  background-color: rgba(212, 163, 89, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.papers-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+
+.papers-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* Медиаконтент (Картинки и Видео) */
+.video-card {
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: #141714;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-img, 
+.media-video,
+.scroll-video {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Теги технологий */
+.timeline-item .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.timeline-item .tags span {
+  font-size: 0.75rem;
+  background-color: #141714;
+  color: var(--accent-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}

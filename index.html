@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Калинин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Стартовый экран -->
+    <header class="hero">
+        <div class="container">
+            <h1>Калинин Григорий</h1>
+            <p>Резюме</p>
+            <div class="scroll-down-hint">
+                Листайте вниз <span class="arrow">↓</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Поток информации (появляется при прокрутке) -->
+    <main class="content-stream">
+        <div class="container">
+
+            <div class="card fade-in">
+                <h2>Обо мне</h2>
+                <p>Обучаюсь на 3 курсе в «НИУ «МЭИ» на кафедре «Мехатроники, роботехники, динамики и прочности машин» в группе кадрового резерва для энергетики и инновационной экономики по направлению «Мехатроника и робототехника». </p>
+            </div>
+
+            <div class="card fade-in">
+                <h2>Технологический стек</h2>
+                <p><strong>Языки и инструменты:</strong> Python, C++, Git, Linux, ROS 2, Open3D, OpenCV, CAD системы, английский язык B2+, Wolfram Mathematica , MATLAB.</p>
+                <p><strong>Специализация:</strong> Мульти-агентная разработка, 3D-моделирование, MPC управление, SLAM.</p>
+            </div>
+
+            <div class="card fade-in">
+    <h2>Опыт и проекты</h2>
+    
+    <div class="timeline">
+
+        <!-- 1. Научные статьи -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3>Научно-исследовательская деятельность</h3>
+                <span class="date">2025 – 2026</span>
+            </div>
+            <p>Автор и соавтор научных публикаций в области мобильной робототехники и алгоритмов управления:</p>
+            <ul class="papers-list">
+                <li><a href="http://srcms.ru/tgism/32/text/01.pdf" target="_blank">«Кинематическое управление меканум-платформой на основе функций Ляпунова»</a></li>
+                <li><a href="http://srcms.ru/tgism/36/text/01.pdf" target="_blank">«Методика идентификации погрешностей установки меканум-колес на мобильной платформе»</a></li>
+                <li>«Определение плоскости с использованием ROS 2 и Gazebo»</li>
+            </ul>
+            <div class="tags">
+                <span>ROS 2</span>
+                <span>Gazebo</span>
+                <span>C++ / Python</span>
+                <span>Математическое моделирование</span>
+            </div>
+        </div>
+
+        <!-- 2. Практика в Университете Сириус -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3>Практика в Университете «Сириус»</h3>
+                <span class="date">2026</span>
+            </div>
+            <p>Работа с колесными робототехническими платформами, ориентация по ArUco-маркерам и разработка алгоритмов управления с прогнозирующими моделями (MPC).</p>
+            <div class="tags">
+                <span>MPC</span>
+                <span>ArUco</span>
+                <span>Computer Vision</span>
+                <span>Python</span>
+            </div>
+            <!-- Медиа-блок (Картинка / Схема) -->
+            <div class="video-card">
+                <video class="scroll-video" muted loop playsinline preload="metadata">
+                    <source src="assets/video/MPC.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+            </div>
+        </div>
+
+        <!-- 3. Практика в Сколково -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3>Практика в Сколково</h3>
+                <span class="date">2026</span>
+            </div>
+            <p>Разработка Python-пакета для построения мультиагентной системы с целью создания автономного патрулирующего дрона.</p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Мультиагентные системы</span>
+                <span>UAV / Дроны</span>
+            </div>
+            <p>GitHub: <a href="https://github.com/grishakalinin2014-alt/UAV-Agent">Ссылка на проект</a></p>
+        </div>
+
+        <!-- 4. Летняя школа в HIT (Китай) -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3>Харбинский политехнический институт (HIT, Китай)</h3>
+                <span class="date">2025</span>
+            </div>
+            <p>Международная практика: проектирование и сборка робота для игры в кёрлинг. Полный цикл разработки — от 3D-моделирования деталей и печати до программирования алгоритмов движения.</p>
+            <div class="tags">
+                <span>3D-моделирование</span>
+                <span>3D-печать</span>
+                <span>Программирование микроконтроллеров</span>
+            </div>
+            <div class="video-card">
+                <video class="scroll-video" muted loop playsinline preload="metadata">
+                    <source src="assets/video/Harbin.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+            </div>
+        </div>
+
+        <!-- 5. Хакатон МТС -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <h3>Хакатон по робототехнике от МТС</h3>
+                <span class="date">2025</span>
+            </div>
+            <p><strong>Полуфиналист.</strong> Разработка Python-алгоритмов автономного прохождения лабиринта на скорость по камере и реальном роботе в условиях априорно неизвестной среды.</p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Computer Vision</span>
+                <span>Автономные алгоритмы</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+            <div class="card fade-in">
+                <h2>Контакты</h2>
+                <p>Открыт к предложениям и интересным задачам.</p>
+                <p>GitHub: <a href="https://github.com/grishakalinin2014-alt">Проекты</a></p>
+                <p>Email: <a href="mailto:grisha.kalinin.2014@mail.ru">grisha.kalinin.2014@mail.ru</a></p>
+                <p>Telegram: <a href="https://t.me/kaligrn">Гриша</a></p>
+                <p>VK: <a href="https://vk.ru/kereeshka_pod_pivo">Григорий Калинин</a></p>               
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
